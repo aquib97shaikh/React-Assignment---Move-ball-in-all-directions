@@ -34,25 +34,21 @@ const App = () => {
 
   useEffect(() => {
     const onKeyDown = ({ key }) => {
-      let tempX = x;
-      let tempY = y;
+      let tempX = x,
+        tempY = y;
       let ALLOWED_KEYS = {
         ArrowUp: () => (tempY = tempY - 5),
         ArrowDown: () => (tempY = tempY + 5),
         ArrowLeft: () => (tempX = tempX - 5),
         ArrowRight: () => (tempX = tempX + 5),
       };
-      if (renderBall && key in ALLOWED_KEYS) {
-        ALLOWED_KEYS[key]();
-      }
-      setx(tempX,tempY);
+      renderBall && key in ALLOWED_KEYS && ALLOWED_KEYS[key]();
+      setx(tempX, tempY);
       console.log(ballPosition);
     };
-    
+
     document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-    };
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [setx]);
 
   const renderChoice = () => {
