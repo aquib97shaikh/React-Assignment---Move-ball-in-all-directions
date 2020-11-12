@@ -47,8 +47,8 @@ const App = () => {
       console.log(ballPosition);
     };
 
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [setx]);
 
   const renderChoice = () => {
