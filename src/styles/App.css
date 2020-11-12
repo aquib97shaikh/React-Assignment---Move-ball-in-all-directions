@@ -7,16 +7,30 @@
 }
 body html .root {
     height: 100%;
+    margin:0; padding:0; overflow:hidden 
+
 }
+
+svg {
+  position:fixed; 
+  top:0; left:0;
+   height:100%; width:100%;
+   stroke:rgb(255,0,0);
+  stroke-width:2;
+  }
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@1,100&display=swap");
 
 .ballProvider, .start{
 	font-family: "Fredoka One", cursive;
   
-	  background-color: #202124;
+	background-color: #202124;
   color: white;
   height: 30px;
   font-size: 15px;
+  
   border-radius:8px;
   border: none;
   width: 195px;
@@ -24,10 +38,31 @@ body html .root {
   
 
 }
+.maze {
+  height: 600px;
+  width:600px;
+  margin:0px;
+  position:fixed;
+  top:30px;left:30px;
+  z-index: -2;
+  
+}
+.lines {
+  position:fixed; 
+  top:0; left:0;
+  height:100%; width:100%;
+  stroke:rgb(54, 10, 252);
+  stroke-width:2;
+  overflow: hidden;
+  z-index: -1;
+  
+}
+
 .reset{
 	font-family: "Fredoka One", cursive;
-  
-	  background-color: #202124;
+  position: fixed;
+  bottom:100px;right: 50px;
+	background-color: #202124;
   color: white;
   height: 30px;
   font-size: 15px;
@@ -38,11 +73,11 @@ body html .root {
 
 }
 .ball{
-    background-color: black;
+    background-color: dodgerblue;
     box-shadow: 0 10px 10px -6px;
     position: absolute;
     right: 0px;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-radius: 25px;
 }
